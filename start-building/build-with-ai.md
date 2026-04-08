@@ -27,6 +27,26 @@ There are two ways to provide WDK context to your AI:
 1. **[Connect via MCP Server](#connect-wdk-docs-via-mcp-server)** - Best experience. Your AI tool can search and query WDK docs in real time.
 2. **[Connect via Markdown](#connect-wdk-docs-via-markdown)** - Works with any AI tool. Feed documentation directly into the context window.
 
+```mermaid
+flowchart TD
+    Q{"Does your AI tool\nsupport MCP?"}
+    Q -->|Yes| MCP["Connect via MCP Server\n(real-time doc search)"]
+    Q -->|No| MD["Connect via Markdown\n(paste docs into context)"]
+
+    MCP --> URL["Add MCP URL to config\ndocs.wallet.tether.io/~gitbook/mcp"]
+    MD --> LLMS["Fetch llms-full.txt\nor append .md to any page URL"]
+
+    URL --> BUILD["AI generates accurate\nWDK code"]
+    LLMS --> BUILD
+
+    style Q fill:#1a1a2e,stroke:#e94560,color:#fff
+    style MCP fill:#0f3460,stroke:#e94560,color:#fff
+    style MD fill:#533483,stroke:#e94560,color:#fff
+    style URL fill:#16213e,stroke:#0f3460,color:#fff
+    style LLMS fill:#16213e,stroke:#0f3460,color:#fff
+    style BUILD fill:#1a3a2a,stroke:#4ecca3,color:#fff
+```
+
 {% hint style="info" %}
 **Want to give AI agents wallet access?** The [MCP Toolkit](../ai/mcp-toolkit/README.md) creates an MCP server that exposes WDK wallets as tools - letting AI agents check balances, send transactions, swap tokens, and more.
 {% endhint %}

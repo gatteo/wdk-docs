@@ -24,6 +24,46 @@ You can use the WDK MCP Toolkit as a tool provider for [LangChain](https://www.l
 
 This integration uses the `serve` CLI command, which starts a fully configured MCP server on stdio with no server script required.
 
+```mermaid
+graph LR
+    subgraph Agent["LangChain Agent"]
+        LLM["LLM\n(OpenAI / Anthropic)"]
+    end
+
+    subgraph MCP_Client["MultiServerMCPClient"]
+        SPAWN["Spawns subprocess"]
+    end
+
+    subgraph MCP_Server["WDK MCP Server (stdio)"]
+        SERVE["npx wdk-mcp-toolkit serve"]
+        TOOLS["35 Built-in Tools"]
+    end
+
+    subgraph WDK["WDK Modules"]
+        direction TB
+        W["Wallets\n(EVM, BTC, SOL, ...)"]
+        P["Protocols\n(Swap, Bridge, Lending)"]
+    end
+
+    subgraph BC["Blockchains"]
+        direction TB
+        ETH["Ethereum"]
+        BTC["Bitcoin"]
+        MORE["Arbitrum · Solana\nTON · TRON"]
+    end
+
+    Agent -->|"invoke"| MCP_Client
+    MCP_Client -->|"stdio"| MCP_Server
+    MCP_Server --> WDK
+    WDK --> BC
+
+    style Agent fill:#1a1a2e,stroke:#e94560,color:#fff
+    style MCP_Client fill:#16213e,stroke:#0f3460,color:#fff
+    style MCP_Server fill:#0f3460,stroke:#e94560,color:#fff
+    style WDK fill:#533483,stroke:#e94560,color:#fff
+    style BC fill:#1a3a2a,stroke:#4ecca3,color:#fff
+```
+
 {% hint style="info" %}
 This approach uses LangChain's MCP adapters to connect to the WDK MCP server. WDK does not ship a native LangChain integration, it leverages the standard MCP protocol that LangChain already supports.
 {% endhint %}
