@@ -26,23 +26,6 @@ WDK provides agent skills: structured instruction sets that teach AI agents how 
 **Skill vs MCP Toolkit**: Use an **agent skill** when your agent platform works with file-based instructions (e.g., OpenClaw, Cursor). Use the [MCP Toolkit](mcp-toolkit/README.md) when your agent supports the Model Context Protocol natively (e.g., Claude, Cursor). Use both for maximum coverage.
 {% endhint %}
 
-```mermaid
-flowchart TD
-    Q{"Does your agent\nsupport MCP?"}
-    Q -->|Yes| MCP["Use MCP Toolkit\n(structured tool calling)"]
-    Q -->|No| SKILL["Use Agent Skills\n(file-based instructions)"]
-    Q -->|Both| BOTH["Use both for\nmaximum coverage"]
-    MCP --> WDK["WDK Wallet Operations"]
-    SKILL --> WDK
-    BOTH --> WDK
-
-    style Q fill:#080201,stroke:#FF4E00,color:#fff
-    style MCP fill:#2d1a0a,stroke:#FF4E00,color:#fff
-    style SKILL fill:#331a00,stroke:#FF4E00,color:#fff
-    style BOTH fill:#1a0e06,stroke:#FF4E00,color:#fff
-    style WDK fill:#FF4E00,stroke:#cc3e00,color:#fff
-```
-
 ## What Are Agent Skills?
 
 An agent skill is a structured set of instructions and reference documentation that teaches an AI agent to use a specific tool or SDK. Skills follow the [AgentSkills specification](https://agentskills.io/specification). Each skill is a `SKILL.md` file with frontmatter metadata and detailed instructions that any compatible agent can load and execute.
