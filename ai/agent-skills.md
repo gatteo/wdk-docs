@@ -36,11 +36,11 @@ flowchart TD
     SKILL --> WDK
     BOTH --> WDK
 
-    style Q fill:#1a1a2e,stroke:#e94560,color:#fff
-    style MCP fill:#0f3460,stroke:#e94560,color:#fff
-    style SKILL fill:#533483,stroke:#e94560,color:#fff
-    style BOTH fill:#16213e,stroke:#0f3460,color:#fff
-    style WDK fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style Q fill:#080201,stroke:#FF4E00,color:#fff
+    style MCP fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style SKILL fill:#331a00,stroke:#FF4E00,color:#fff
+    style BOTH fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style WDK fill:#FF4E00,stroke:#cc3e00,color:#fff
 ```
 
 ## What Are Agent Skills?
@@ -76,11 +76,11 @@ flowchart LR
     Gen --> Confirm["🔒 Human confirms\nwrite operations"]
     Confirm --> Exec["Transaction\nexecuted"]
 
-    style Install fill:#16213e,stroke:#0f3460,color:#fff
-    style Load fill:#16213e,stroke:#0f3460,color:#fff
-    style Gen fill:#0f3460,stroke:#e94560,color:#fff
-    style Confirm fill:#533483,stroke:#e94560,color:#fff
-    style Exec fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style Install fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style Load fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style Gen fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style Confirm fill:#331a00,stroke:#FF4E00,color:#fff
+    style Exec fill:#FF4E00,stroke:#cc3e00,color:#fff
 ```
 
 1. **Install the skill** by running `npx skills add tetherto/wdk-agent-skills` and selecting the agent you prefer

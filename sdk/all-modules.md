@@ -65,13 +65,13 @@ graph TD
     CORE --> Fiat
     CORE -.-> Community
 
-    style CORE fill:#0f3460,stroke:#e94560,color:#fff
-    style Wallet fill:#16213e,stroke:#0f3460,color:#fff
-    style Swap fill:#533483,stroke:#e94560,color:#fff
-    style Bridge fill:#533483,stroke:#e94560,color:#fff
-    style Lending fill:#533483,stroke:#e94560,color:#fff
-    style Fiat fill:#533483,stroke:#e94560,color:#fff
-    style Community fill:#2d2d2d,stroke:#888,color:#fff
+    style CORE fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style Wallet fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style Swap fill:#331a00,stroke:#FF4E00,color:#fff
+    style Bridge fill:#331a00,stroke:#FF4E00,color:#fff
+    style Lending fill:#331a00,stroke:#FF4E00,color:#fff
+    style Fiat fill:#331a00,stroke:#FF4E00,color:#fff
+    style Community fill:#080201,stroke:#FF4E00,color:#fff
 ```
 
 ## Core Module

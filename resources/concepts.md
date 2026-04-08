@@ -30,13 +30,13 @@ flowchart LR
     EP --> Wallet["Smart Contract\nWallet"]
     Wallet --> Chain["Blockchain"]
 
-    style User fill:#1a1a2e,stroke:#e94560,color:#fff
-    style UO fill:#16213e,stroke:#0f3460,color:#fff
-    style Bundler fill:#16213e,stroke:#0f3460,color:#fff
-    style EP fill:#0f3460,stroke:#e94560,color:#fff
-    style Paymaster fill:#533483,stroke:#e94560,color:#fff
-    style Wallet fill:#0f3460,stroke:#e94560,color:#fff
-    style Chain fill:#1a1a2e,stroke:#0f3460,color:#fff
+    style User fill:#080201,stroke:#FF4E00,color:#fff
+    style UO fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style Bundler fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style EP fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style Paymaster fill:#331a00,stroke:#FF4E00,color:#fff
+    style Wallet fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style Chain fill:#080201,stroke:#FF4E00,color:#fff
 ```
 
 ## Gasless Transactions
@@ -88,15 +88,15 @@ graph TD
     SPKA0 --> SPKAddr["sp1..."]
     BTC84A0 --> BTC84Addr["bc1q..."]
 
-    style Seed fill:#1a1a2e,stroke:#e94560,color:#fff
-    style M fill:#16213e,stroke:#0f3460,color:#fff
-    style P44 fill:#16213e,stroke:#0f3460,color:#fff
-    style P84 fill:#16213e,stroke:#0f3460,color:#fff
-    style BTC fill:#f7931a,stroke:#c16800,color:#fff
-    style ETH fill:#627eea,stroke:#3c3c3d,color:#fff
-    style SOL fill:#9945ff,stroke:#6b2fd6,color:#fff
-    style SPARK fill:#e94560,stroke:#c73550,color:#fff
-    style BTC84 fill:#f7931a,stroke:#c16800,color:#fff
+    style Seed fill:#080201,stroke:#FF4E00,color:#fff
+    style M fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style P44 fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style P84 fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style BTC fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style ETH fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style SOL fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style SPARK fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style BTC84 fill:#FF4E00,stroke:#cc3e00,color:#fff
 ```
 
 ### BIP-84 (Native SegWit)
@@ -144,16 +144,16 @@ graph TD
     Opt -.-> WDK_EVM
     LN -.-> WDK_SPARK
 
-    style L2 fill:#1a1a2e,stroke:#e94560,color:#fff
-    style Rollups fill:#16213e,stroke:#0f3460,color:#fff
-    style SC fill:#16213e,stroke:#0f3460,color:#fff
-    style Side fill:#16213e,stroke:#0f3460,color:#fff
-    style Opt fill:#0f3460,stroke:#e94560,color:#fff
-    style ZK fill:#0f3460,stroke:#e94560,color:#fff
-    style LN fill:#0f3460,stroke:#e94560,color:#fff
-    style WDK fill:#1a3a2a,stroke:#4ecca3,color:#fff
-    style WDK_EVM fill:#1a6b3a,stroke:#4ecca3,color:#fff
-    style WDK_SPARK fill:#1a6b3a,stroke:#4ecca3,color:#fff
+    style L2 fill:#080201,stroke:#FF4E00,color:#fff
+    style Rollups fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style SC fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style Side fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style Opt fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style ZK fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style LN fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style WDK fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style WDK_EVM fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style WDK_SPARK fill:#FF4E00,stroke:#cc3e00,color:#fff
 ```
 
 - **Rollups**: Bundle multiple transactions and submit them as a single transaction to the main chain
@@ -209,14 +209,14 @@ flowchart LR
     Process --> Out1
     Process --> Out2
 
-    style Inputs fill:#2d1b30,stroke:#e94560,color:#fff
-    style TX fill:#16213e,stroke:#0f3460,color:#fff
-    style Outputs fill:#1a3a2a,stroke:#4ecca3,color:#fff
-    style UTXO1 fill:#533483,stroke:#e94560,color:#fff
-    style UTXO2 fill:#533483,stroke:#e94560,color:#fff
-    style Process fill:#0f3460,stroke:#e94560,color:#fff
-    style Out1 fill:#1a6b3a,stroke:#4ecca3,color:#fff
-    style Out2 fill:#1a6b3a,stroke:#4ecca3,color:#fff
+    style Inputs fill:#080201,stroke:#FF4E00,color:#fff
+    style TX fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style Outputs fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style UTXO1 fill:#331a00,stroke:#FF4E00,color:#fff
+    style UTXO2 fill:#331a00,stroke:#FF4E00,color:#fff
+    style Process fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style Out1 fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style Out2 fill:#FF4E00,stroke:#cc3e00,color:#fff
 ```
 
 1. **Inputs**: References to previous UTXOs that are being spent
@@ -269,9 +269,9 @@ graph TD
     Mainnet ~~~ Testnet
     Testnet ~~~ Regtest
 
-    style Mainnet fill:#1a3a2a,stroke:#4ecca3,color:#fff
-    style Testnet fill:#3a3a1a,stroke:#f0c040,color:#fff
-    style Regtest fill:#1a2a3a,stroke:#4ea8de,color:#fff
+    style Mainnet fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style Testnet fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style Regtest fill:#1a0e06,stroke:#FF4E00,color:#fff
 ```
 
 ### Mainnet

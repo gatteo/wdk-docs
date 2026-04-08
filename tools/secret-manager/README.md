@@ -52,16 +52,16 @@ flowchart LR
         D4 --> D5["dispose()\nzeroize memory"]
     end
 
-    style E1 fill:#1a1a2e,stroke:#e94560,color:#fff
-    style E2 fill:#16213e,stroke:#0f3460,color:#fff
-    style E3 fill:#0f3460,stroke:#e94560,color:#fff
-    style E4 fill:#533483,stroke:#e94560,color:#fff
-    style E5 fill:#1a3a2a,stroke:#4ecca3,color:#fff
-    style D1 fill:#1a3a2a,stroke:#4ecca3,color:#fff
-    style D2 fill:#0f3460,stroke:#e94560,color:#fff
-    style D3 fill:#533483,stroke:#e94560,color:#fff
-    style D4 fill:#16213e,stroke:#0f3460,color:#fff
-    style D5 fill:#8b0000,stroke:#e94560,color:#fff
+    style E1 fill:#080201,stroke:#FF4E00,color:#fff
+    style E2 fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style E3 fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style E4 fill:#331a00,stroke:#FF4E00,color:#fff
+    style E5 fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style D1 fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style D2 fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style D3 fill:#331a00,stroke:#FF4E00,color:#fff
+    style D4 fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style D5 fill:#FF4E00,stroke:#cc3e00,color:#fff
 ```
 
 ## Why this matters

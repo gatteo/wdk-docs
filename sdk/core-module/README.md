@@ -43,18 +43,18 @@ graph LR
     RP --> LEND["lending-aave-evm"]
     RP --> FIAT["fiat-moonpay"]
 
-    style Core fill:#0f3460,stroke:#e94560,color:#fff
-    style BTC fill:#f7931a,stroke:#c16800,color:#fff
-    style EVM fill:#627eea,stroke:#3c3c3d,color:#fff
-    style EVM43 fill:#627eea,stroke:#3c3c3d,color:#fff
-    style SOL fill:#9945ff,stroke:#6b2fd6,color:#fff
-    style SPARK fill:#e94560,stroke:#c73550,color:#fff
-    style TON fill:#0088cc,stroke:#006699,color:#fff
-    style TRON fill:#ff0013,stroke:#cc0010,color:#fff
-    style SWAP fill:#533483,stroke:#e94560,color:#fff
-    style BRIDGE fill:#533483,stroke:#e94560,color:#fff
-    style LEND fill:#533483,stroke:#e94560,color:#fff
-    style FIAT fill:#533483,stroke:#e94560,color:#fff
+    style Core fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style BTC fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style EVM fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style EVM43 fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style SOL fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style SPARK fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style TON fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style TRON fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style SWAP fill:#331a00,stroke:#FF4E00,color:#fff
+    style BRIDGE fill:#331a00,stroke:#FF4E00,color:#fff
+    style LEND fill:#331a00,stroke:#FF4E00,color:#fff
+    style FIAT fill:#331a00,stroke:#FF4E00,color:#fff
 ```
 
 ## Next Steps

@@ -24,10 +24,10 @@ The Wallet Development Kit (WDK) provides a set of modules that support connecti
 flowchart LR
     App["Your App"] --> WDK["WDK Core"] --> Lending["Lending Module"] --> Pool["Aave V3 Pool"]
 
-    style App fill:#1a1a2e,stroke:#e94560,color:#fff
-    style WDK fill:#0f3460,stroke:#e94560,color:#fff
-    style Lending fill:#533483,stroke:#e94560,color:#fff
-    style Pool fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style App fill:#080201,stroke:#FF4E00,color:#fff
+    style WDK fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style Lending fill:#331a00,stroke:#FF4E00,color:#fff
+    style Pool fill:#FF4E00,stroke:#cc3e00,color:#fff
 ```
 
 ## Lending & Borrowing Protocol Modules

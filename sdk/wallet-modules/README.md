@@ -41,9 +41,9 @@ graph TD
     Q -->|"Yes"| AA
     Q -->|"No"| Standard
 
-    style Q fill:#1a1a2e,stroke:#e94560,color:#fff
-    style Standard fill:#16213e,stroke:#0f3460,color:#fff
-    style AA fill:#533483,stroke:#e94560,color:#fff
+    style Q fill:#080201,stroke:#FF4E00,color:#fff
+    style Standard fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style AA fill:#331a00,stroke:#FF4E00,color:#fff
 ```
 
 ## Supported Networks

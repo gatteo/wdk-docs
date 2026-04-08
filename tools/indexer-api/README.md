@@ -43,10 +43,10 @@ flowchart LR
     IDX --> API
     API --> APP
 
-    style Chains fill:#1a3a2a,stroke:#4ecca3,color:#fff
-    style IDX fill:#0f3460,stroke:#e94560,color:#fff
-    style API fill:#16213e,stroke:#0f3460,color:#fff
-    style APP fill:#1a1a2e,stroke:#e94560,color:#fff
+    style Chains fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style IDX fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style API fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style APP fill:#080201,stroke:#FF4E00,color:#fff
 ```
 
 {% hint style="info" %}

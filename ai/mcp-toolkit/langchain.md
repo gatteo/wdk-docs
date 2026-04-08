@@ -57,11 +57,11 @@ graph LR
     MCP_Server --> WDK
     WDK --> BC
 
-    style Agent fill:#1a1a2e,stroke:#e94560,color:#fff
-    style MCP_Client fill:#16213e,stroke:#0f3460,color:#fff
-    style MCP_Server fill:#0f3460,stroke:#e94560,color:#fff
-    style WDK fill:#533483,stroke:#e94560,color:#fff
-    style BC fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style Agent fill:#080201,stroke:#FF4E00,color:#fff
+    style MCP_Client fill:#1a0e06,stroke:#FF4E00,color:#fff
+    style MCP_Server fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style WDK fill:#331a00,stroke:#FF4E00,color:#fff
+    style BC fill:#FF4E00,stroke:#cc3e00,color:#fff
 ```
 
 {% hint style="info" %}
