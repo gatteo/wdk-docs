@@ -21,6 +21,22 @@ layout:
 
 A WDK module for integrating MoonPay's fiat on-ramp and off-ramp services. This module generates signed widget URLs that allow users to buy and sell cryptocurrency using fiat currencies directly within your application.
 
+```mermaid
+sequenceDiagram
+    participant App as Your App
+    participant WDK as WDK Module
+    participant MP as MoonPay Widget
+    participant User as User
+
+    App->>WDK: generateWidgetUrl(config)
+    WDK-->>App: Signed URL
+    App->>User: Open widget URL
+    User->>MP: Complete purchase/sale
+    MP-->>App: Callback (redirect)
+    App->>WDK: getTransaction(txId)
+    WDK-->>App: Transaction status
+```
+
 Get started by reading the [Usage](./usage.md) guide.
 
 {% hint style="info" %}

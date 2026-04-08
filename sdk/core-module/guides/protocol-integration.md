@@ -21,6 +21,26 @@ layout:
 
 The WDK Core module supports registering external protocols. This allows you to extend the basic wallet functionality with advanced features like [token swapping](#swapping-tokens), [cross-chain bridging](#bridging-assets), and lending, all through a unified interface.
 
+```mermaid
+graph TB
+    WDK["WDK Core"]
+    WDK -->|"registerWallet()"| W["Registered Wallets\n(EVM, BTC, SOL, ...)"]
+    WDK -->|"registerProtocol()"| P["Protocol Adapters"]
+    W -->|"getAccount()"| ACC["Wallet Account"]
+    ACC -->|"account.protocol()"| P
+    P --> SWAP["Velora Swap"]
+    P --> BRIDGE["USDT0 Bridge"]
+    P --> LEND["Aave Lending"]
+
+    style WDK fill:#0f3460,stroke:#e94560,color:#fff
+    style W fill:#16213e,stroke:#0f3460,color:#fff
+    style ACC fill:#16213e,stroke:#0f3460,color:#fff
+    style P fill:#533483,stroke:#e94560,color:#fff
+    style SWAP fill:#3a1a5e,stroke:#e94560,color:#fff
+    style BRIDGE fill:#3a1a5e,stroke:#e94560,color:#fff
+    style LEND fill:#3a1a5e,stroke:#e94560,color:#fff
+```
+
 ## Register Protocols
 
 You can register protocols globally (for all new accounts).

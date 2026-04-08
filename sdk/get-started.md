@@ -36,7 +36,60 @@ It is built on some core principles: **self-custodial and stateless** (private k
 
 WDK's architecture is built around the concept of composable modules. Each module is a specialized component that handles specific functionality, allowing you to build exactly what you need without unnecessary complexity.
 
-<!-- <figure><img src="../assets/sdk-architecture.png" alt="WDK SDK Architecture"><figcaption><p>WDK SDK modular architecture with core orchestrator and specialized modules</p></figcaption></figure> -->
+```mermaid
+graph TB
+    subgraph App["Your Application"]
+        direction LR
+        A1["Mobile App"]
+        A2["Node.js Server"]
+        A3["AI Agent"]
+    end
+
+    subgraph Core["@tetherto/wdk (Core Orchestrator)"]
+        REG["registerWallet() · registerProtocol()"]
+        API["getAccount() · executeProtocol()"]
+    end
+
+    subgraph Wallets["Wallet Modules"]
+        direction LR
+        BTC["wdk-wallet\n-btc"]
+        EVM["wdk-wallet\n-evm"]
+        EVM4337["wdk-wallet\n-evm-erc4337"]
+        SOL["wdk-wallet\n-solana"]
+        SPARK["wdk-wallet\n-spark"]
+        TON["wdk-wallet\n-ton"]
+        TRON["wdk-wallet\n-tron"]
+    end
+
+    subgraph Protocols["Protocol Modules"]
+        direction LR
+        SWAP["swap-velora\n-evm"]
+        BRIDGE["bridge-usdt0\n-evm"]
+        LEND["lending-aave\n-evm"]
+        FIAT["fiat\n-moonpay"]
+    end
+
+    subgraph Chains["Blockchains"]
+        direction LR
+        C1["Bitcoin"]
+        C2["Ethereum"]
+        C3["Solana"]
+        C4["TON"]
+        C5["TRON"]
+        C6["Spark"]
+    end
+
+    App --> Core
+    Core --> Wallets
+    Core --> Protocols
+    Wallets --> Chains
+
+    style App fill:#1a1a2e,stroke:#e94560,color:#fff
+    style Core fill:#0f3460,stroke:#e94560,color:#fff
+    style Wallets fill:#16213e,stroke:#0f3460,color:#fff
+    style Protocols fill:#533483,stroke:#e94560,color:#fff
+    style Chains fill:#1a3a2a,stroke:#4ecca3,color:#fff
+```
 
 Each module has a single responsibility. Wallet modules handle blockchain operations, protocol modules manage DeFi interactions, and the core module orchestrates everything.
 
@@ -112,6 +165,27 @@ WDK modules are organized into five main categories, each serving a specific pur
 The WDK SDK uses a registration-based system where modules are added to a central orchestrator. This creates a unified interface while maintaining module independence.
 
 #### Registration Flow
+
+```mermaid
+sequenceDiagram
+    participant App as Your App
+    participant WDK as WDK Core
+    participant WM as Wallet Modules
+    participant PM as Protocol Modules
+    participant BC as Blockchain
+
+    App->>WDK: new WDK(seedPhrase)
+    App->>WDK: registerWallet('ethereum', WalletManagerEvm, config)
+    App->>WDK: registerWallet('bitcoin', WalletManagerBtc, config)
+    App->>WDK: registerProtocol('swap', SwapVelora)
+    App->>WDK: getAccount('ethereum', 0)
+    WDK->>WM: derive account from seed
+    WM-->>App: WalletAccountEvm
+    App->>WDK: executeProtocol('swap', params)
+    WDK->>PM: execute swap
+    PM->>BC: submit transaction
+    BC-->>App: result
+```
 
 **1. Core Module Initialization**
 

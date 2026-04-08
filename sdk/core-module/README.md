@@ -21,6 +21,41 @@ layout:
 
  This package serves as the main entry point and **orchestrator for all WDK wallet and protocol modules**, allowing you to register and manage different blockchain wallets through a single, unified interface.
 
+```mermaid
+graph LR
+    subgraph Core["@tetherto/wdk (Core)"]
+        RW["registerWallet()"]
+        RP["registerProtocol()"]
+        GA["getAccount()"]
+        EP["executeProtocol()"]
+    end
+
+    RW --> BTC["wdk-wallet-btc"]
+    RW --> EVM["wdk-wallet-evm"]
+    RW --> EVM43["wdk-wallet-evm\n-erc4337"]
+    RW --> SOL["wdk-wallet-solana"]
+    RW --> SPARK["wdk-wallet-spark"]
+    RW --> TON["wdk-wallet-ton"]
+    RW --> TRON["wdk-wallet-tron"]
+
+    RP --> SWAP["swap-velora-evm"]
+    RP --> BRIDGE["bridge-usdt0-evm"]
+    RP --> LEND["lending-aave-evm"]
+    RP --> FIAT["fiat-moonpay"]
+
+    style Core fill:#0f3460,stroke:#e94560,color:#fff
+    style BTC fill:#f7931a,stroke:#c16800,color:#fff
+    style EVM fill:#627eea,stroke:#3c3c3d,color:#fff
+    style EVM43 fill:#627eea,stroke:#3c3c3d,color:#fff
+    style SOL fill:#9945ff,stroke:#6b2fd6,color:#fff
+    style SPARK fill:#e94560,stroke:#c73550,color:#fff
+    style TON fill:#0088cc,stroke:#006699,color:#fff
+    style TRON fill:#ff0013,stroke:#cc0010,color:#fff
+    style SWAP fill:#533483,stroke:#e94560,color:#fff
+    style BRIDGE fill:#533483,stroke:#e94560,color:#fff
+    style LEND fill:#533483,stroke:#e94560,color:#fff
+    style FIAT fill:#533483,stroke:#e94560,color:#fff
+```
 
 ## Next Steps
 

@@ -115,6 +115,46 @@ As we move toward a world where humans, machines and AI Agents need to manage di
 
 WDK combines four core components to deliver a complete wallet development solution:
 
+```mermaid
+graph TB
+    subgraph Top["Examples & Starters"]
+        EX["Production-ready templates\n& reference implementations"]
+    end
+
+    subgraph UI["UI Kits"]
+        UIK["React Native components\nfor wallet interfaces"]
+    end
+
+    subgraph SDK["Modular SDK"]
+        direction LR
+        CORE["WDK Core"]
+        WALLETS["Wallet Modules\n(BTC, EVM, SOL,\nTON, TRON, Spark)"]
+        PROTOS["Protocol Modules\n(Swap, Bridge,\nLending, Fiat)"]
+        CORE --- WALLETS
+        CORE --- PROTOS
+    end
+
+    subgraph Data["Indexer API"]
+        IDX["Blockchain data access\n(balances, transactions, history)"]
+    end
+
+    subgraph Chains["Blockchains"]
+        direction LR
+        B1["Bitcoin"] ~~~ B2["Ethereum"] ~~~ B3["Solana"] ~~~ B4["TON"] ~~~ B5["TRON"] ~~~ B6["Spark"]
+    end
+
+    Top --> UI
+    UI --> SDK
+    SDK --> Data
+    Data --> Chains
+
+    style Top fill:#533483,stroke:#e94560,color:#fff
+    style UI fill:#3a1a5e,stroke:#e94560,color:#fff
+    style SDK fill:#0f3460,stroke:#e94560,color:#fff
+    style Data fill:#16213e,stroke:#0f3460,color:#fff
+    style Chains fill:#1a3a2a,stroke:#4ecca3,color:#fff
+```
+
 <table data-card-size="large" data-view="cards">
 	<thead>
 		<tr>

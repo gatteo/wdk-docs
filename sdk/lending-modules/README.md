@@ -20,6 +20,16 @@ layout:
 
 The Wallet Development Kit (WDK) provides a set of modules that support connection with lending protocols on different blockchain networks. All modules share a common interface, ensuring consistent behavior across different blockchain implementations.
 
+```mermaid
+flowchart LR
+    App["Your App"] --> WDK["WDK Core"] --> Lending["Lending Module"] --> Pool["Aave V3 Pool"]
+
+    style App fill:#1a1a2e,stroke:#e94560,color:#fff
+    style WDK fill:#0f3460,stroke:#e94560,color:#fff
+    style Lending fill:#533483,stroke:#e94560,color:#fff
+    style Pool fill:#1a3a2a,stroke:#4ecca3,color:#fff
+```
+
 ## Lending & Borrowing Protocol Modules
 
 DeFi lending functionality for different lending & borrowing protocols

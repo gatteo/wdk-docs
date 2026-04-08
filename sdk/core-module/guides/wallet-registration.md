@@ -21,6 +21,25 @@ layout:
 
 This guide explains how to register wallet modules with your WDK instance. The WDK Core module itself doesn't contain blockchain-specific logic; instead, you register separate modules for each chain you want to support (e.g., Ethereum, TON, Bitcoin).
 
+```mermaid
+graph LR
+    WDK["WDK Core\n.registerWallet()"]
+    WDK --> BTC["WalletManager\nBtc"]
+    WDK --> EVM["WalletManager\nEvm"]
+    WDK --> SOL["WalletManager\nSolana"]
+    WDK --> TON["WalletManager\nTon"]
+    WDK --> TRON["WalletManager\nTron"]
+    WDK --> SPARK["WalletManager\nSpark"]
+
+    style WDK fill:#0f3460,stroke:#e94560,color:#fff
+    style BTC fill:#f7931a,stroke:#c16800,color:#fff
+    style EVM fill:#627eea,stroke:#3c3c3d,color:#fff
+    style SOL fill:#9945ff,stroke:#6b2fd6,color:#fff
+    style TON fill:#0088cc,stroke:#006699,color:#fff
+    style TRON fill:#ff0013,stroke:#cc0010,color:#fff
+    style SPARK fill:#e94560,stroke:#c73550,color:#fff
+```
+
 ## How it works
 
 The WDK uses a builder pattern, allowing you to chain `.registerWallet()` calls. Each call connects a blockchain-specific manager to your central WDK instance.

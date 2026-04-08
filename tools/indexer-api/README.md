@@ -20,6 +20,35 @@ layout:
 
 The WDK Indexer REST API provides fast, reliable access to balances, token transfers, and transaction history across multiple chains.
 
+```mermaid
+flowchart LR
+    subgraph Chains["Blockchain Nodes"]
+        ETH["Ethereum"]
+        BTC["Bitcoin"]
+        TON["TON"]
+        MORE["TRON · Solana\nArbitrum · Polygon"]
+    end
+
+    IDX["WDK Indexer\n(monitors & indexes)"]
+
+    subgraph API["REST API"]
+        EP1["/balances"]
+        EP2["/transactions"]
+        EP3["/transfers"]
+    end
+
+    APP["Your App\n🔑 API Key Required"]
+
+    Chains --> IDX
+    IDX --> API
+    API --> APP
+
+    style Chains fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style IDX fill:#0f3460,stroke:#e94560,color:#fff
+    style API fill:#16213e,stroke:#0f3460,color:#fff
+    style APP fill:#1a1a2e,stroke:#e94560,color:#fff
+```
+
 {% hint style="info" %}
 A blockchain indexer continuously monitors and organizes blockchain transactions, making them instantly searchable through a simple REST API.
 {% endhint %}

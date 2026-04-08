@@ -21,6 +21,24 @@ These modules allow developers to implement gasless transaction flows where user
 
 ERC-4337 is an Ethereum standard that enables Account Abstraction without requiring changes to the Ethereum protocol itself. It introduces a new transaction type called "UserOperation" that allows smart contract wallets to handle transaction validation and fee payment logic through components like EntryPoint contracts, Bundlers, and Paymasters.
 
+```mermaid
+flowchart LR
+    User["👤 User"] --> UO["UserOperation"]
+    UO --> Bundler["Bundler"]
+    Bundler --> EP["EntryPoint\n(on-chain)"]
+    EP --> Paymaster["Paymaster\n(sponsors gas)"]
+    EP --> Wallet["Smart Contract\nWallet"]
+    Wallet --> Chain["Blockchain"]
+
+    style User fill:#1a1a2e,stroke:#e94560,color:#fff
+    style UO fill:#16213e,stroke:#0f3460,color:#fff
+    style Bundler fill:#16213e,stroke:#0f3460,color:#fff
+    style EP fill:#0f3460,stroke:#e94560,color:#fff
+    style Paymaster fill:#533483,stroke:#e94560,color:#fff
+    style Wallet fill:#0f3460,stroke:#e94560,color:#fff
+    style Chain fill:#1a1a2e,stroke:#0f3460,color:#fff
+```
+
 ## Gasless Transactions
 
 Gasless transactions allow users to perform blockchain operations without holding native tokens for gas fees. Instead, transaction fees are paid by third-party services or in alternative tokens, enabling new user onboarding, cross-chain operations, and corporate applications where companies can sponsor employee transactions.
@@ -44,6 +62,42 @@ BIP-39 defines a standard for generating mnemonic seed phrases from random entro
 ### BIP-44 (Multi-Account Hierarchy)
 
 BIP-44 defines a hierarchical deterministic wallet structure that allows creating multiple accounts from a single seed phrase. The derivation path format is `m/purpose'/coin_type'/account'/change/address_index`, where each module uses its specific coin type (e.g., 60 for Ethereum, 998 for Spark).
+
+```mermaid
+graph TD
+    Seed["🔑 Seed Phrase\n(BIP-39 mnemonic)"] --> M["m"]
+    M --> P44["44' (purpose)"]
+    M --> P84["84' (purpose)"]
+
+    P44 --> BTC["0' (Bitcoin)"]
+    P44 --> ETH["60' (Ethereum)"]
+    P44 --> SOL["501' (Solana)"]
+    P44 --> SPARK["998' (Spark)"]
+
+    P84 --> BTC84["0' (Bitcoin\nSegWit)"]
+
+    BTC --> BTCA0["Account 0"]
+    ETH --> ETHA0["Account 0"]
+    SOL --> SOLA0["Account 0"]
+    SPARK --> SPKA0["Account 0"]
+    BTC84 --> BTC84A0["Account 0"]
+
+    BTCA0 --> BTCAddr["bc1q..."]
+    ETHA0 --> ETHAddr["0x..."]
+    SOLA0 --> SOLAddr["So1..."]
+    SPKA0 --> SPKAddr["sp1..."]
+    BTC84A0 --> BTC84Addr["bc1q..."]
+
+    style Seed fill:#1a1a2e,stroke:#e94560,color:#fff
+    style M fill:#16213e,stroke:#0f3460,color:#fff
+    style P44 fill:#16213e,stroke:#0f3460,color:#fff
+    style P84 fill:#16213e,stroke:#0f3460,color:#fff
+    style BTC fill:#f7931a,stroke:#c16800,color:#fff
+    style ETH fill:#627eea,stroke:#3c3c3d,color:#fff
+    style SOL fill:#9945ff,stroke:#6b2fd6,color:#fff
+    style SPARK fill:#e94560,stroke:#c73550,color:#fff
+    style BTC84 fill:#f7931a,stroke:#c16800,color:#fff
+```
 
 ### BIP-84 (Native SegWit)
 
@@ -69,6 +123,38 @@ The Spark wallet module integrates Lightning Network functionality, allowing use
 Layer 2 solutions are protocols built on top of existing blockchains to improve scalability, reduce fees, and enhance transaction speed. They process transactions off the main blockchain and periodically settle to the base layer.
 
 ### Types of Layer 2
+
+```mermaid
+graph TD
+    L2["Layer 2 Solutions"] --> Rollups["Rollups"]
+    L2 --> SC["State Channels"]
+    L2 --> Side["Sidechains"]
+
+    Rollups --> Opt["Optimistic\n(Arbitrum, Optimism)"]
+    Rollups --> ZK["ZK Rollups"]
+
+    SC --> LN["Lightning Network"]
+
+    subgraph WDK["WDK Module Support"]
+        direction LR
+        WDK_EVM["wdk-wallet-evm\n(EVM Rollups)"]
+        WDK_SPARK["wdk-wallet-spark\n(Lightning / Spark)"]
+    end
+
+    Opt -.-> WDK_EVM
+    LN -.-> WDK_SPARK
+
+    style L2 fill:#1a1a2e,stroke:#e94560,color:#fff
+    style Rollups fill:#16213e,stroke:#0f3460,color:#fff
+    style SC fill:#16213e,stroke:#0f3460,color:#fff
+    style Side fill:#16213e,stroke:#0f3460,color:#fff
+    style Opt fill:#0f3460,stroke:#e94560,color:#fff
+    style ZK fill:#0f3460,stroke:#e94560,color:#fff
+    style LN fill:#0f3460,stroke:#e94560,color:#fff
+    style WDK fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style WDK_EVM fill:#1a6b3a,stroke:#4ecca3,color:#fff
+    style WDK_SPARK fill:#1a6b3a,stroke:#4ecca3,color:#fff
+```
 
 - **Rollups**: Bundle multiple transactions and submit them as a single transaction to the main chain
 - **State Channels**: Allow parties to transact off-chain and settle periodically
@@ -102,6 +188,37 @@ UTXO is a fundamental concept in Bitcoin and other UTXO-based blockchains. Each 
 
 ### How UTXOs Work
 
+```mermaid
+flowchart LR
+    subgraph Inputs["Inputs (consumed)"]
+        UTXO1["UTXO 0.5 BTC"]
+        UTXO2["UTXO 0.3 BTC"]
+    end
+
+    subgraph TX["Transaction"]
+        Process["Σ inputs = 0.8 BTC\n- fee: 0.0001 BTC"]
+    end
+
+    subgraph Outputs["Outputs (created)"]
+        Out1["UTXO 0.6 BTC\n→ Recipient"]
+        Out2["UTXO 0.1999 BTC\n→ Change (sender)"]
+    end
+
+    UTXO1 --> Process
+    UTXO2 --> Process
+    Process --> Out1
+    Process --> Out2
+
+    style Inputs fill:#2d1b30,stroke:#e94560,color:#fff
+    style TX fill:#16213e,stroke:#0f3460,color:#fff
+    style Outputs fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style UTXO1 fill:#533483,stroke:#e94560,color:#fff
+    style UTXO2 fill:#533483,stroke:#e94560,color:#fff
+    style Process fill:#0f3460,stroke:#e94560,color:#fff
+    style Out1 fill:#1a6b3a,stroke:#4ecca3,color:#fff
+    style Out2 fill:#1a6b3a,stroke:#4ecca3,color:#fff
+```
+
 1. **Inputs**: References to previous UTXOs that are being spent
 2. **Outputs**: New UTXOs created by the transaction
 3. **Change**: Remaining value returned to the sender as a new UTXO
@@ -131,6 +248,31 @@ Seed phrases and private keys are the foundation of wallet security in blockchai
 ## Network Types
 
 Blockchain networks come in different types for different use cases.
+
+```mermaid
+graph TD
+    subgraph Mainnet["🟢 Mainnet (Production)"]
+        M1["Real value transacted"]
+        M2["Ethereum, Bitcoin, Spark"]
+    end
+
+    subgraph Testnet["🟡 Testnet (Development)"]
+        T1["Test tokens, no real value"]
+        T2["Sepolia, Bitcoin Testnet, Spark Testnet"]
+    end
+
+    subgraph Regtest["🔵 Regtest (Local)"]
+        R1["Fully local, instant blocks"]
+        R2["Private Ethereum, Bitcoin Regtest"]
+    end
+
+    Mainnet ~~~ Testnet
+    Testnet ~~~ Regtest
+
+    style Mainnet fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style Testnet fill:#3a3a1a,stroke:#f0c040,color:#fff
+    style Regtest fill:#1a2a3a,stroke:#4ea8de,color:#fff
+```
 
 ### Mainnet
 

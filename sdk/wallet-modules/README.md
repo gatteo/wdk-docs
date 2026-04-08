@@ -18,6 +18,34 @@ layout:
 
 The Wallet Development Kit (WDK) provides a set of modules that support multiple blockchain networks. All modules share a common interface, ensuring consistent behavior across different blockchain implementations.
 
+```mermaid
+graph TD
+    subgraph Standard["Standard Wallet Modules"]
+        direction LR
+        BTC["Bitcoin\nwdk-wallet-btc"]
+        EVM["EVM Chains\nwdk-wallet-evm"]
+        SOL["Solana\nwdk-wallet-solana"]
+        SPARK["Spark\nwdk-wallet-spark"]
+        TON["TON\nwdk-wallet-ton"]
+        TRON["TRON\nwdk-wallet-tron"]
+    end
+
+    subgraph AA["Account Abstraction (Gasless)"]
+        direction LR
+        EVM43["EVM ERC-4337\nwdk-wallet-evm-erc4337"]
+        TONG["TON Gasless\nwdk-wallet-ton-gasless"]
+        TRONG["TRON Gasfree\nwdk-wallet-tron-gasfree"]
+    end
+
+    Q{"Need gasless\ntransactions?"}
+    Q -->|"Yes"| AA
+    Q -->|"No"| Standard
+
+    style Q fill:#1a1a2e,stroke:#e94560,color:#fff
+    style Standard fill:#16213e,stroke:#0f3460,color:#fff
+    style AA fill:#533483,stroke:#e94560,color:#fff
+```
+
 ## Supported Networks
 
 This package works with multiple blockchain networks through wallet registration.

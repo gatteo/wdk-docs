@@ -21,6 +21,59 @@ layout:
 
 A comprehensive list of all available WDK modules. Each module is designed to be modular and can be used independently or combined with others.
 
+```mermaid
+graph TD
+    CORE["@tetherto/wdk-core\n(Orchestrator)"]
+
+    subgraph Wallet["Wallet Modules"]
+        direction LR
+        BTC["wdk-wallet-btc"]
+        EVM["wdk-wallet-evm"]
+        EVM43["wdk-wallet-evm\n-erc4337"]
+        SOL["wdk-wallet-solana"]
+        SPARK["wdk-wallet-spark"]
+        TON["wdk-wallet-ton"]
+        TONG["wdk-wallet-ton\n-gasless"]
+        TRON["wdk-wallet-tron"]
+        TRONG["wdk-wallet-tron\n-gasfree"]
+    end
+
+    subgraph Swap["Swap"]
+        VELORA["swap-velora-evm"]
+    end
+
+    subgraph Bridge["Bridge"]
+        USDT0["bridge-usdt0-evm"]
+    end
+
+    subgraph Lending["Lending"]
+        AAVE["lending-aave-evm"]
+    end
+
+    subgraph Fiat["Fiat"]
+        MOON["fiat-moonpay"]
+    end
+
+    subgraph Community["Community"]
+        RGB["wdk-wallet-rgb"]
+    end
+
+    CORE --> Wallet
+    CORE --> Swap
+    CORE --> Bridge
+    CORE --> Lending
+    CORE --> Fiat
+    CORE -.-> Community
+
+    style CORE fill:#0f3460,stroke:#e94560,color:#fff
+    style Wallet fill:#16213e,stroke:#0f3460,color:#fff
+    style Swap fill:#533483,stroke:#e94560,color:#fff
+    style Bridge fill:#533483,stroke:#e94560,color:#fff
+    style Lending fill:#533483,stroke:#e94560,color:#fff
+    style Fiat fill:#533483,stroke:#e94560,color:#fff
+    style Community fill:#2d2d2d,stroke:#888,color:#fff
+```
+
 ## Core Module
 
 The orchestrator that manages all WDK modules.

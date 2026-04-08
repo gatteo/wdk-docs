@@ -21,6 +21,31 @@ layout:
 
 A lightweight package that lets EVM wallet accounts interact with Aave V3: supply, withdraw, borrow, repay, and read account data. It works with both standard EVM wallets and ERC‑4337 smart accounts.
 
+```mermaid
+flowchart LR
+    Supply["Supply\nAsset"] --> Collateral["Enable as\nCollateral"]
+    Collateral --> Borrow["Borrow\nAsset"]
+    Borrow --> Repay["Repay\nDebt"]
+    Repay --> Withdraw["Withdraw\nAsset"]
+
+    subgraph Position["User Position"]
+        direction TB
+        COL["Collateral Value"]
+        DEBT["Outstanding Debt"]
+        HF["Health Factor"]
+    end
+
+    Supply -.-> Position
+    Borrow -.-> Position
+
+    style Supply fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style Collateral fill:#16213e,stroke:#0f3460,color:#fff
+    style Borrow fill:#533483,stroke:#e94560,color:#fff
+    style Repay fill:#0f3460,stroke:#e94560,color:#fff
+    style Withdraw fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style Position fill:#1a1a2e,stroke:#e94560,color:#fff
+```
+
 ## Features
 
 - **Supply/Withdraw**: Add and remove supported assets from Aave pools

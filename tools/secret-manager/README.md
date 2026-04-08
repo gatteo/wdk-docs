@@ -34,6 +34,36 @@ Powered by [`@tetherto/wdk-secret-manager`](https://github.com/tetherto/wdk-secr
 - **Memory Safety**: In‑memory operation, explicit zeroization, and `dispose()` to wipe secrets
 - **Cross‑Runtime**: Works in Node and Bare environments
 
+```mermaid
+flowchart LR
+    subgraph Encrypt["Encrypt Flow"]
+        direction LR
+        E1["Random\nEntropy"] --> E2["BIP-39\nMnemonic"]
+        E2 --> E3["Passkey +\nPBKDF2-SHA256"]
+        E3 --> E4["XSalsa20-Poly1305\nEncryption"]
+        E4 --> E5["Encrypted\nBlob\n(versioned header)"]
+    end
+
+    subgraph Decrypt["Decrypt Flow"]
+        direction LR
+        D1["Encrypted\nBlob"] --> D2["Passkey +\nPBKDF2-SHA256"]
+        D2 --> D3["XSalsa20-Poly1305\nDecryption"]
+        D3 --> D4["Mnemonic\n(in-memory)"]
+        D4 --> D5["dispose()\nzeroize memory"]
+    end
+
+    style E1 fill:#1a1a2e,stroke:#e94560,color:#fff
+    style E2 fill:#16213e,stroke:#0f3460,color:#fff
+    style E3 fill:#0f3460,stroke:#e94560,color:#fff
+    style E4 fill:#533483,stroke:#e94560,color:#fff
+    style E5 fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style D1 fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style D2 fill:#0f3460,stroke:#e94560,color:#fff
+    style D3 fill:#533483,stroke:#e94560,color:#fff
+    style D4 fill:#16213e,stroke:#0f3460,color:#fff
+    style D5 fill:#8b0000,stroke:#e94560,color:#fff
+```
+
 ## Why this matters
 
 - Seed phrases grant full control over funds and must never be exposed

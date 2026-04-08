@@ -20,6 +20,16 @@ layout:
 
 The Swap Development Kit (WDK) provides a set of modules that support swap on top of multiple blockchain networks. All modules share a common interface, ensuring consistent behavior across different blockchain implementations.
 
+```mermaid
+flowchart LR
+    App["Your App"] --> WDK["WDK Core"] --> Swap["Swap Module"] --> DEX["DEX / Aggregator\n(Velora)"]
+
+    style App fill:#1a1a2e,stroke:#e94560,color:#fff
+    style WDK fill:#0f3460,stroke:#e94560,color:#fff
+    style Swap fill:#533483,stroke:#e94560,color:#fff
+    style DEX fill:#1a3a2a,stroke:#4ecca3,color:#fff
+```
+
 ## Swap Protocol Modules
 
 DeFi swap functionality for token exchanges across different DEXs:

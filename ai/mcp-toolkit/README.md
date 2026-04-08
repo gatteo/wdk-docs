@@ -30,6 +30,46 @@ Powered by [`@tetherto/wdk-mcp-toolkit`](https://github.com/tetherto/wdk-mcp-too
 
 {% embed url="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FRwT8I8B1DP5OZiLSjSCW%2Fuploads%2F4bLqUGsw5krkbnRiAEmx%2F543206805-9fc1aa65-b76b-4569-bac0-42f75ccdc1ce.mp4?alt=media&token=25181754-0e5d-4497-b59c-ebc8c955675e" %}
 
+```mermaid
+graph LR
+    subgraph Clients["AI Clients"]
+        Claude["Claude"]
+        Cursor["Cursor"]
+        LC["LangChain"]
+    end
+
+    subgraph MCP["WDK MCP Server"]
+        direction TB
+        Tools["35 Built-in Tools"]
+        Confirm["🔒 Human Confirmation\n(write operations)"]
+    end
+
+    subgraph SDK["WDK Modules"]
+        direction TB
+        WM["Wallet Modules"]
+        PM["Protocol Modules"]
+    end
+
+    subgraph Chains["Blockchains"]
+        direction TB
+        ETH["Ethereum"]
+        BTC["Bitcoin"]
+        SOL["Solana"]
+        MORE["TON · TRON · Spark"]
+    end
+
+    Clients -->|"MCP Protocol\n(stdio)"| MCP
+    MCP --> SDK
+    SDK --> Chains
+
+    style Clients fill:#1a1a2e,stroke:#e94560,color:#fff
+    style MCP fill:#0f3460,stroke:#e94560,color:#fff
+    style SDK fill:#16213e,stroke:#0f3460,color:#fff
+    style Chains fill:#1a3a2a,stroke:#4ecca3,color:#fff
+```
+
+> **Keys never leave the MCP server boundary.** All signing happens locally within the WDK modules.
+
 ## Features
 
 - **MCP Server Extension** - Extends the official `@modelcontextprotocol/sdk` McpServer with WDK-specific capabilities

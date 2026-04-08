@@ -20,6 +20,20 @@ layout:
 
 The Wallet Development Kit (WDK) provides fiat modules that enable on-ramp and off-ramp functionality, allowing users to seamlessly convert between fiat currencies and cryptocurrencies within your application.
 
+```mermaid
+flowchart LR
+    subgraph OnRamp["On-Ramp"]
+        F1["Fiat (USD, EUR)"] -->|"Buy"| P1["Provider\n(MoonPay)"] -->|"Receive"| C1["Crypto\n(USD₮, BTC)"]
+    end
+
+    subgraph OffRamp["Off-Ramp"]
+        C2["Crypto\n(USD₮, BTC)"] -->|"Sell"| P2["Provider\n(MoonPay)"] -->|"Receive"| F2["Fiat (USD, EUR)"]
+    end
+
+    style OnRamp fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style OffRamp fill:#16213e,stroke:#0f3460,color:#fff
+```
+
 ## Fiat Protocol Modules
 
 On-ramp and off-ramp functionality for fiat currency integration:

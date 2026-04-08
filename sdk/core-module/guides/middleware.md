@@ -21,6 +21,26 @@ layout:
 
 Middleware allows you to intercept wallet operations. You can use this to add [logging](#logging), implement retry logic, or handle [failovers for RPC providers](#failover-protection-with-provider-failover).
 
+```mermaid
+flowchart LR
+    subgraph Standard["Standard Middleware"]
+        direction TB
+        MW["registerMiddleware()\n(hooks on WDK)"]
+        MW --> LOG["Logging"]
+        MW --> RETRY["Retry Logic"]
+    end
+
+    subgraph Failover["Failover Wrapper"]
+        direction TB
+        FW["ProviderFailover\n(wraps WalletManager)"]
+        FW --> RPC1["Primary RPC"]
+        FW --> RPC2["Fallback RPC"]
+    end
+
+    style Standard fill:#16213e,stroke:#0f3460,color:#fff
+    style Failover fill:#533483,stroke:#e94560,color:#fff
+```
+
 ## Register Middleware
 
 When registering middleware, you should reference a specific chain. The middleware function runs every time an account is instantiated or an operation is performed, depending on the implementation.

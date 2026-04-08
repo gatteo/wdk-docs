@@ -35,6 +35,46 @@ A simple package that lets EVM wallet accounts bridge USD₮0 tokens across chai
 - **Memory Safety**: Secure transaction handling with proper error management
 - **Provider Flexibility**: Works with JSON-RPC URLs and EIP-1193 browser providers
 
+```mermaid
+graph LR
+    subgraph Sources["EVM Source Chains"]
+        direction TB
+        ETH["Ethereum"]
+        ARB["Arbitrum"]
+        OPT["Optimism"]
+        POLY["Polygon"]
+        BERA["Berachain"]
+        MONAD["Monad"]
+        MORE1["+ 16 more"]
+    end
+
+    subgraph Bridge["LayerZero / USD₮0"]
+        direction TB
+        LZ["OFT Cross-Chain\nMessaging"]
+    end
+
+    subgraph EVM_Dest["EVM Destinations"]
+        direction TB
+        D1["All 22 EVM\nsource chains"]
+    end
+
+    subgraph NonEVM["Non-EVM Destinations"]
+        direction TB
+        SOL["Solana"]
+        TON["TON"]
+        TRON["TRON"]
+    end
+
+    Sources -->|"bridge()"| Bridge
+    Bridge --> EVM_Dest
+    Bridge --> NonEVM
+
+    style Sources fill:#16213e,stroke:#0f3460,color:#fff
+    style Bridge fill:#0f3460,stroke:#e94560,color:#fff
+    style EVM_Dest fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style NonEVM fill:#533483,stroke:#e94560,color:#fff
+```
+
 ## Supported Networks
 
 This package supports bridging from EVM source chains to EVM and non-EVM destination chains.

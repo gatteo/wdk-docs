@@ -20,6 +20,17 @@ layout:
 
 The Wallet Development Kit (WDK) provides a set of modules that support bridging between different blockchain networks. All modules share a common interface, ensuring consistent behavior across different blockchain implementations.
 
+```mermaid
+flowchart LR
+    SRC["Source Chain\n(EVM)"] --> Bridge["Bridge Protocol\n(LayerZero)"] --> DST1["EVM Destination"]
+    Bridge --> DST2["Non-EVM\n(Solana, TON, TRON)"]
+
+    style SRC fill:#16213e,stroke:#0f3460,color:#fff
+    style Bridge fill:#0f3460,stroke:#e94560,color:#fff
+    style DST1 fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style DST2 fill:#533483,stroke:#e94560,color:#fff
+```
+
 ## Bridge Protocol Modules
 
 Cross-chain bridge functionality for token transfers between blockchains:

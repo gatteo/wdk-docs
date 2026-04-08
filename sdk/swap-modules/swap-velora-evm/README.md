@@ -21,6 +21,24 @@ layout:
 
 A lightweight package that lets EVM wallet accounts swap tokens using the velora aggregator. It provides a clean SDK for token swaps on EVM chains and works with both standard wallets and ERC‑4337 smart accounts.
 
+```mermaid
+flowchart LR
+    A["Get Quote\n(quoteSwap)"] --> B{"Allowance\nsufficient?"}
+    B -->|No| C["Approve Token\n(reset to 0 for USDT)"]
+    C --> D["Execute Swap"]
+    B -->|Yes| D
+    D --> E["Tokens Received"]
+
+    D2["ERC-4337 Path"] -.->|"Bundler +\nPaymaster"| D
+
+    style A fill:#16213e,stroke:#0f3460,color:#fff
+    style B fill:#1a1a2e,stroke:#e94560,color:#fff
+    style C fill:#533483,stroke:#e94560,color:#fff
+    style D fill:#0f3460,stroke:#e94560,color:#fff
+    style E fill:#1a3a2a,stroke:#4ecca3,color:#fff
+    style D2 fill:#3a1a5e,stroke:#e94560,color:#fff
+```
+
 ## Features
 
 - **Token Swapping**: Execute token swaps through velora on supported EVM networks
