@@ -61,7 +61,7 @@ graph LR
     style MCP_Client fill:#1a0e06,stroke:#FF4E00,color:#fff
     style MCP_Server fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style WDK fill:#331a00,stroke:#FF4E00,color:#fff
-    style BC fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style BC fill:#2d1a0a,stroke:#FF4E00,color:#fff
 ```
 
 {% hint style="info" %}

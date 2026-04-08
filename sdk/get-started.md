@@ -88,7 +88,7 @@ graph TB
     style Core fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style Wallets fill:#1a0e06,stroke:#FF4E00,color:#fff
     style Protocols fill:#331a00,stroke:#FF4E00,color:#fff
-    style Chains fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style Chains fill:#2d1a0a,stroke:#FF4E00,color:#fff
 ```
 
 Each module has a single responsibility. Wallet modules handle blockchain operations, protocol modules manage DeFi interactions, and the core module orchestrates everything.

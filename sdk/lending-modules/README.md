@@ -27,7 +27,7 @@ flowchart LR
     style App fill:#080201,stroke:#FF4E00,color:#fff
     style WDK fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style Lending fill:#331a00,stroke:#FF4E00,color:#fff
-    style Pool fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style Pool fill:#2d1a0a,stroke:#FF4E00,color:#fff
 ```
 
 ## Lending & Borrowing Protocol Modules

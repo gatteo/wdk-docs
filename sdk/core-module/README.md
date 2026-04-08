@@ -44,11 +44,11 @@ graph LR
     RP --> FIAT["fiat-moonpay"]
 
     style Core fill:#2d1a0a,stroke:#FF4E00,color:#fff
-    style BTC fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style BTC fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style EVM fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style EVM43 fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style SOL fill:#1a0e06,stroke:#FF4E00,color:#fff
-    style SPARK fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style SPARK fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style TON fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style TRON fill:#1a0e06,stroke:#FF4E00,color:#fff
     style SWAP fill:#331a00,stroke:#FF4E00,color:#fff

@@ -56,12 +56,12 @@ flowchart LR
     style E2 fill:#1a0e06,stroke:#FF4E00,color:#fff
     style E3 fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style E4 fill:#331a00,stroke:#FF4E00,color:#fff
-    style E5 fill:#FF4E00,stroke:#cc3e00,color:#fff
-    style D1 fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style E5 fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style D1 fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style D2 fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style D3 fill:#331a00,stroke:#FF4E00,color:#fff
     style D4 fill:#1a0e06,stroke:#FF4E00,color:#fff
-    style D5 fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style D5 fill:#2d1a0a,stroke:#FF4E00,color:#fff
 ```
 
 ## Why this matters

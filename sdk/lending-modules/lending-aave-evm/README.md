@@ -38,11 +38,11 @@ flowchart LR
     Supply -.-> Position
     Borrow -.-> Position
 
-    style Supply fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style Supply fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style Collateral fill:#1a0e06,stroke:#FF4E00,color:#fff
     style Borrow fill:#331a00,stroke:#FF4E00,color:#fff
     style Repay fill:#2d1a0a,stroke:#FF4E00,color:#fff
-    style Withdraw fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style Withdraw fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style Position fill:#080201,stroke:#FF4E00,color:#fff
 ```
 

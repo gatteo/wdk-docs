@@ -92,11 +92,11 @@ graph TD
     style M fill:#1a0e06,stroke:#FF4E00,color:#fff
     style P44 fill:#1a0e06,stroke:#FF4E00,color:#fff
     style P84 fill:#1a0e06,stroke:#FF4E00,color:#fff
-    style BTC fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style BTC fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style ETH fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style SOL fill:#1a0e06,stroke:#FF4E00,color:#fff
-    style SPARK fill:#FF4E00,stroke:#cc3e00,color:#fff
-    style BTC84 fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style SPARK fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style BTC84 fill:#2d1a0a,stroke:#FF4E00,color:#fff
 ```
 
 ### BIP-84 (Native SegWit)
@@ -151,9 +151,9 @@ graph TD
     style Opt fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style ZK fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style LN fill:#2d1a0a,stroke:#FF4E00,color:#fff
-    style WDK fill:#FF4E00,stroke:#cc3e00,color:#fff
-    style WDK_EVM fill:#FF4E00,stroke:#cc3e00,color:#fff
-    style WDK_SPARK fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style WDK fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style WDK_EVM fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style WDK_SPARK fill:#2d1a0a,stroke:#FF4E00,color:#fff
 ```
 
 - **Rollups**: Bundle multiple transactions and submit them as a single transaction to the main chain
@@ -211,12 +211,12 @@ flowchart LR
 
     style Inputs fill:#080201,stroke:#FF4E00,color:#fff
     style TX fill:#1a0e06,stroke:#FF4E00,color:#fff
-    style Outputs fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style Outputs fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style UTXO1 fill:#331a00,stroke:#FF4E00,color:#fff
     style UTXO2 fill:#331a00,stroke:#FF4E00,color:#fff
     style Process fill:#2d1a0a,stroke:#FF4E00,color:#fff
-    style Out1 fill:#FF4E00,stroke:#cc3e00,color:#fff
-    style Out2 fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style Out1 fill:#2d1a0a,stroke:#FF4E00,color:#fff
+    style Out2 fill:#2d1a0a,stroke:#FF4E00,color:#fff
 ```
 
 1. **Inputs**: References to previous UTXOs that are being spent
@@ -269,7 +269,7 @@ graph TD
     Mainnet ~~~ Testnet
     Testnet ~~~ Regtest
 
-    style Mainnet fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style Mainnet fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style Testnet fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style Regtest fill:#1a0e06,stroke:#FF4E00,color:#fff
 ```

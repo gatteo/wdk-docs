@@ -32,12 +32,12 @@ graph LR
     WDK --> SPARK["WalletManager\nSpark"]
 
     style WDK fill:#2d1a0a,stroke:#FF4E00,color:#fff
-    style BTC fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style BTC fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style EVM fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style SOL fill:#1a0e06,stroke:#FF4E00,color:#fff
     style TON fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style TRON fill:#1a0e06,stroke:#FF4E00,color:#fff
-    style SPARK fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style SPARK fill:#2d1a0a,stroke:#FF4E00,color:#fff
 ```
 
 ## How it works

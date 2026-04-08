@@ -65,7 +65,7 @@ graph LR
     style Clients fill:#080201,stroke:#FF4E00,color:#fff
     style MCP fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style SDK fill:#1a0e06,stroke:#FF4E00,color:#fff
-    style Chains fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style Chains fill:#2d1a0a,stroke:#FF4E00,color:#fff
 ```
 
 > **Keys never leave the MCP server boundary.** All signing happens locally within the WDK modules.

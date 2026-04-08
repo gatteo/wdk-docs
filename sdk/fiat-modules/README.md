@@ -30,7 +30,7 @@ flowchart LR
         C2["Crypto\n(USD₮, BTC)"] -->|"Sell"| P2["Provider\n(MoonPay)"] -->|"Receive"| F2["Fiat (USD, EUR)"]
     end
 
-    style OnRamp fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style OnRamp fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style OffRamp fill:#1a0e06,stroke:#FF4E00,color:#fff
 ```
 

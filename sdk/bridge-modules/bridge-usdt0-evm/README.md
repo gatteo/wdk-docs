@@ -71,7 +71,7 @@ graph LR
 
     style Sources fill:#1a0e06,stroke:#FF4E00,color:#fff
     style Bridge fill:#2d1a0a,stroke:#FF4E00,color:#fff
-    style EVM_Dest fill:#FF4E00,stroke:#cc3e00,color:#fff
+    style EVM_Dest fill:#2d1a0a,stroke:#FF4E00,color:#fff
     style NonEVM fill:#331a00,stroke:#FF4E00,color:#fff
 ```
 
